@@ -181,3 +181,6 @@ JOIN appointments ap
 GROUP BY a.animalid, a.name
 ORDER BY appointment_count DESC
 LIMIT 1;
+
+ALTER TABLE invoices
+RENAME TO billing_records;
