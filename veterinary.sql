@@ -188,3 +188,6 @@ RENAME TO billing_records;
 UPDATE owners
 SET phone = '555-5678'
 WHERE ownerid = 3;
+
+DELETE FROM appointments
+WHERE LOWER(reason) LIKE '%cancellation%';
