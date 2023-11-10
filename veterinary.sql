@@ -211,3 +211,7 @@ FROM appointments a
 JOIN animals an ON a.animalid = an.animalid
 JOIN owners o ON an.ownerid = o.ownerid
 WHERE a.appointdate BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '7 days';
+
+UPDATE appointments
+SET completed = true
+WHERE reason = 'Follow-up' AND appointdate < CURRENT_DATE;
