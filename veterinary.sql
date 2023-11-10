@@ -201,3 +201,6 @@ COMMIT;
 
 ALTER TABLE appointments
 ALTER COLUMN animalid INT NULL;
+
+ALTER TABLE medicalrecords
+DROP COLUMN notes;
