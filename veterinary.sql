@@ -196,3 +196,8 @@ BEGIN TRANSACTION;
 UPDATE invoices
 SET totalamount = totalamount * 0.95
 WHERE paymentdate >= '2023-11-01' AND paymentdate < '2023-12-01';
+
+COMMIT;
+
+ALTER TABLE appointments
+ALTER COLUMN animalid INT NULL;
