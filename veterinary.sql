@@ -204,3 +204,10 @@ ALTER COLUMN animalid INT NULL;
 
 ALTER TABLE medicalrecords
 DROP COLUMN notes;
+
+CREATE VIEW upcoming_appointments AS
+SELECT a.appointid, a.appointdate, a.reason, an.name AS animal_name, o.ofirstname || ' ' || o.olastname AS owner_name
+FROM appointments a
+JOIN animals an ON a.animalid = an.animalid
+JOIN owners o ON an.ownerid = o.ownerid
+WHERE a.appointdate BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '7 days';
