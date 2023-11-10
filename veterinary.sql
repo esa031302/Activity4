@@ -215,3 +215,6 @@ WHERE a.appointdate BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '7 days';
 UPDATE appointments
 SET completed = true
 WHERE reason = 'Follow-up' AND appointdate < CURRENT_DATE;
+
+ALTER TABLE owners
+ADD CONSTRAINT unique_email UNIQUE (email);
