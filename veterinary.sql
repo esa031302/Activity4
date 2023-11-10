@@ -184,3 +184,7 @@ LIMIT 1;
 
 ALTER TABLE invoices
 RENAME TO billing_records;
+
+UPDATE owners
+SET phone = '555-5678'
+WHERE ownerid = 3;
